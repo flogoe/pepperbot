@@ -1,0 +1,22 @@
+topic: ~quest_roemer()
+# Defining extra concepts out of words or group of words
+#concept:(hello) [hello hi hey "good morning" greetings]
+
+# Replying to speech
+#u:(~hello) ~hello
+
+u: ("Ja") "Sehr gut!" ^goto(branch1)
+
+
+proposal: %branch1
+    "Die Fibel von meinem Papa ist sehr schön, sie hat die Form eines Pferdes. \pau=2000\ Warte ich zeichne sie dir kurz auf meine Wachstafel %drawBookmark \pau=2000\
+    Sollen wir gemeinsam losziehen?" %Bookmark1
+    u1: ("Ja") "Bene, dann lass uns logehen!"  %startQuestBookmark
+
+
+    u1: ("Nein")%refuseQuestBookmark "Nagut, vale!"
+
+
+    u1:(e:Dialog/NotUnderstood)
+    ^rand["Ich habe dich nicht verstanden \pau=1000\ Kannst du es bitte nochmal sagen?" "Heute ist es etwas laut hier. \pau=1000\ Kannst du deine Antwort wiederholen?"]
+    ^stayInScope
