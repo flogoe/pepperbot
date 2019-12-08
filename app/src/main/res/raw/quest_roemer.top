@@ -6,12 +6,13 @@ topic: ~quest_roemer()
 #u:(~hello) ~hello
 
 u: ("Ja") "Sehr gut!" ^goto(branch1)
+u: ("Nein") "Nagut, vale!"
 
 
 proposal: %branch1
     "Die Fibel von meinem Papa ist sehr schön, sie hat die Form eines Pferdes. \pau=2000\ Warte ich zeichne sie dir kurz auf meine Wachstafel %drawBookmark \pau=2000\
     Sollen wir gemeinsam losziehen?" %Bookmark1
-    u1: ("Ja") "Bene, dann lass uns logehen!"  %startQuestBookmark
+    u1: ("Ja") "Bene, dann lass uns los gehen!"  %startQuestBookmark
 
 
     u1: ("Nein")%refuseQuestBookmark "Nagut, vale!"
